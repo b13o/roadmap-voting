@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<img width="1440" alt="app-banner" src="https://github.com/user-attachments/assets/324d11ca-5c5c-4321-b7d6-2d413daae389" />
 
-## Getting Started
+# ロードマップ投票アプリ
 
-First, run the development server:
+## 概要
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+このプロジェクトでは、プロダクトのロードマップ管理アプリを構築します。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+追加して欲しい機能の提案・投票・ステータス管理ができる、一般的なプロダクトロードマップアプリです。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 学習目標
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+React 19 の、Actions を使用したサーバー関数についてです。
 
-## Learn More
+特に、クライアントコンポーネントとサーバーサイドで実行される関数を組み合わせた、
+状態の更新方法について、確認してください。
 
-To learn more about Next.js, take a look at the following resources:
+### 推奨技術
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+このプロジェクトの難易度と趣旨を踏まえて、以下の使用をお勧めします。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Actions を用いた非同期処理
+- Next.js App Router でのプロジェクト構築
+- TypeScript による型チェック
+- Tailwind CSS を用いたスタイリング
+- shadcn/ui によるコンポーネントの導入
+- My JSON Server を用いたモック API の活用
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎯 お題
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- 「ユーザーストーリー」を全て満たす、アプリを構築してください。
+- 必要に応じて、スクリーンショットやデモサイトの URL を、参照してください。
+- なお、スタイルは、あなた自身で独自にカスタマイズすることが可能です。
+
+### 必須機能
+
+1. **機能提案の作成**：
+   - タイトルと説明文を入力して新機能を提案する。
+2. **投票機能**：
+   - 各提案に対して賛成の投票ができる。
+3. **ステータス管理**：
+   - 提案のステータス（提案中、計画済み、進行中、完了）を更新できる。
+
+### **追加情報**
+
+今回推奨する API は、「[**My JSON Server**](https://my-json-server.typicode.com/)」です。
+
+- この API は、ユーザー登録なしで、無料で使用できます
+- GitHub 上に用意した`db.json`のファイルから、ダミーの API を構築することができます
+- **ただし、変更は異なるリクエスト間で保持されないので注意してください**
+- このプロジェクト用に用意された API エンドポイントを使用できます: `https://my-json-server.typicode.com/b13o/roadmap-voting/issues`
+
+## ユーザーストーリー
+
+- [ ] ユーザーがサイトにアクセスすると、既存の機能提案一覧が表示されている。
+- [ ] ボタンをクリックすると、モーダル形式のフォームが表示される。
+- [ ] 新しい機能を投稿する際は、フォームでタイトルと説明文を入力することができる。
+- [ ] 提案を作成すると、作成日時と投票数が、共に一覧に追加される。
+- [ ] 提案は作成された段階で、投票数が１になっている
+- [ ] 各提案に対して「**👍**」ボタンをクリックすると、投票数が 1 つ増加する。
+- [ ] 提案のステータスを「**提案中、計画済み、進行中、完了**」の中から選択できる。
+- [ ] ステータスごとに色分けされて表示される。
+- [ ] ステータスごとにフィルタリングして、絞り込みをすることができる

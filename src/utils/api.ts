@@ -43,7 +43,7 @@ const updateFeatureStatus = async (
 
   if (!res.ok) {
     throw new Error(
-      "Failed to update feature status. Changes aren't persisted."
+      "Failed to update feature status.（ダミーAPIのため、変更は保持されません🙏）"
     );
   }
   return await res.json();
@@ -62,7 +62,9 @@ const voteForFeature = async (
     body: JSON.stringify({ votes: previousVotes + 1 }),
   });
   if (!res.ok) {
-    throw new Error("Failed to vote for feature. Changes aren't persisted.");
+    throw new Error(
+      "Failed to vote for feature. （ダミーAPIのため、変更は保持されません🙏）."
+    );
   }
   return await res.json();
 };
