@@ -14,7 +14,7 @@ export default async function Home() {
           ユーザーと開発者が繋がり、開発サイクルを早めます！
         </p>
       </header>
-      <FeatureList features={features} />
+      <FeatureList initialFeatures={features} />
     </main>
   );
 }

@@ -1,23 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState, useState } from "react";
 import FeatureCard from "./FeatureCard";
 import { Feature } from "@/types";
 import { STATUS_FILTERS } from "@/constants";
+// 下記はこの後の手順で追加
+import NewFeatureModal from "./NewFeatureModal";
+import addFeature from "@/actions/add-feature";
 
 type FeatureListProps = {
-  features: Feature[];
+  initialFeatures: Feature[];
 };
 
-function FeatureList({ features }: FeatureListProps) {
+function FeatureList({ initialFeatures }: FeatureListProps) {
   const [filter, setFilter] = useState("全て");
+  const [features, addFeatureAction] = useActionState(
+    addFeature,
+    initialFeatures
+  );
 
   return (
     <div className="space-y-8">
       <div className="flex justify-center">
-        {/* NewFeatureModal */}
-        追加
+        <NewFeatureModal action={addFeatureAction} />
       </div>
+
       <div className="max-w-3xl mx-auto space-y-6">
         <div className="flex space-x-2 overflow-x-auto">
           {STATUS_FILTERS.map((status) => (
